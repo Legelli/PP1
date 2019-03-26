@@ -1,0 +1,14 @@
+% !TEX TS-program = XeLaTeX
+\listfiles
+\documentclass{article}
+\usepackage{pst-optexp}  
+\begin{document}
+
+    \begin{pspicture}(-0.3,0)(2,3.7)
+    \psset{labeloffset=1, optboxwidth=1, arrowscale=1.5, arrowinset=0}
+    \optbox[position=end, labelangle=90](1,1)(1,2){Box}
+    \beamsplitter[labelangle=-90](1,2)(1,1)(2,1){BS}
+    \drawbeam[arrows=->]{1}{2}(2,1)
+    \end{pspicture}
+
+\end{document}
