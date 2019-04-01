@@ -42,7 +42,7 @@
 \setlist{noitemsep}
 \usepackage{amsmath}
 \usepackage{hyperref}
-\usepackage{pst-optexp} %Diagrammi ottici
+%\usepackage{pst-optexp} %Diagrammi ottici
 \usepackage{physics} %Ambienti utili
 
 
@@ -124,14 +124,14 @@ Si misura l'intensità di un laser HeNe\footnote{\url{https://www.dropbox.com/s/
 %==================================================
 \section{Apparato strumentale}
 
-\begin{pspicture}(2.5,4)
-                                 \psset{beam}
-                                 % wrong, also beam width is changed
-                                 \mirror[linewidth=3\pslinewidth](0,3)(2,3)(2,2)
-                                 % correct result
-                                 \addtopsstyle{OptComp}{linewidth=3\pslinewidth}
-                                 \mirror(0,1)(2,1)(2,0)
-                               \end{pspicture}
+%\begin{pspicture}(2.5,4)
+%                                 \psset{beam}
+%                                 % wrong, also beam width is changed
+%                                 \mirror[linewidth=3\pslinewidth](0,3)(2,3)(2,2)
+%                                 % correct result
+%                                 \addtopsstyle{OptComp}{linewidth=3\pslinewidth}
+%                                 \mirror(0,1)(2,1)(2,0)
+%                               \end{pspicture}
 
 %ESEMPIO DI CODICE
 %\begin{lstlisting}[style=CStyle, caption={Codice per la misura dei tempi di esecuzione della moltiplicazione}, label=lst:moltiplicazione]
@@ -185,6 +185,70 @@ Si misura l'intensità di un laser HeNe\footnote{\url{https://www.dropbox.com/s/
 %\end{tabular}
 %\end{center}
 
+\section{Angolo di Brewster}
+Si monta l'apparato in Figura \ref{opt:brewster}, dove prima del fotodiodo è stato posizionato un \emph{beamsplitter polarizzatore}, in grado di trasmettere la componente orizzontale o quella verticale\footnote{Quale delle due componenti viene trasmessa e quale riflessa dipende da come è costruito e come è montato il beamsplitter.} della radiazione e riflettere la componente ortogonale, con coefficiente di assorbimento complessivo quasi nullo. 
+
+Posizionando tra il beamsplitter e il rilevatore un dielettrico (perspex) in modo che il piano di incidenza del laser fosse parallelo al piano di lavoro, si è ottenuto che la componente verticale della radiazione coincidesse con la componente TE e quella orizzontale con la TM.
+
+Per capire quale delle due componenti veniva trasmessa dal beamsplitter, lo si è posizionato tra il filtro polarizzatore e il dielettrico e si è controllato visivamente il raggio riflesso al variare dell'angolo di incidenza: nel nostro caso si è visto che il riflesso si annullava per un angolo particolare (quello di Brewster, appunto), dunque abbiamo dedotto che la componente trasmessa fosse quella orizzontale, cioè di tipo TM.
+
+Si è dunque rimosso il dielettrico e si è visto per quale angolo del polarizzatore la componente riflessa si annullava: nel nostro caso specifico si è misurato un angolo $\theta_{\mathrm{TM}} = \SI{52 \pm 1}{°}$ per cui tutto il laser veniva trasmesso, quest'angolo corrisponde ad una direzione verticale dell'asse di trasmissione del polarizzatore. Si è dunque verificato che a $\theta_{\mathrm{TE}} = \theta_{\mathrm{TM}} - \SI{90}{°} = \SI{322 \pm 1}{°}$ la componente trasmessa si annullasse, allora $\theta_{\mathrm{TE}}$ corrisponde all'asse di trasmissione in direzione orizzontale.
+
+Misurate le posizioni del polarizzatore corrispondenti alle due componenti di interesse, si è rimosso il beamsplitter dall'apparato e si è cominciato a prendere misure di intensità del raggio riflesso dal dielettrico al variare dell'angolo di incidenza. Nel fare questo si è tenuto conto che l'intensità del laser diminuisce all'aumentare della distanza dalla sorgente a causa di fenomeni diffrattivi, quindi si è cercato di mantenere il rilevatore sempre alla stessa distanza dal dielettrico.
+
+Inoltre bisogna tener conto del fatto che i raggi riflessi dal dielettrico sono due: quello riflesso dalla prima superficie e quello riflesso dalla seconda. Nel fare la misura bisogna considerare che il raggio di interesse è quello corrispondente alla riflessione sulla prima superficie, riconoscibile perché associato all'angolo di riflessione minore.
+
+Per ogni angolo di incidenza, fissato il rilevatore in modo che il fotodiodo misurasse l'intensità maggiore, si è misurata l'intensità per entrambe le componenti, ruotando il polaroid e posizionandolo sugli angoli $\theta_{\mathrm{TE}}$ e $\theta_{\mathrm{TM}}$ misurati in precedenza.
+
+\subsection{Riflettanza}
+Gli andamenti previsti per le riflettanze, ovvero i rapporti tra l'intensità misurata e quella misurata in assenza di dielettrico, sono descritti dalle due curve
+\begin{equation}\label{eq:rs}
+	r_{\mathrm{TE}} = r_ s = \frac{\cos \theta - \sqrt{n^2 - \sin^2 \theta}}{\cos \theta + \sqrt{n^2 - \sin^2 \theta}},
+\end{equation}
+\begin{equation}\label{eq:rs}
+	r_{\mathrm{TE}} = r_p =  \frac{-n^2 \cos \theta + \sqrt{n^2 - \sin^2 \theta}}{n^2 \cos \theta + \sqrt{n^2 - \sin^2 \theta}},
+\end{equation}
+dove $n$ è il rapporto tra l'indice di rifrazione del dielettrico e quello dell'aria.
+Il risultato della misura è riportato in Figura \ref{fig:brewster_I}, dove ai dati sperimentali sono sovrapposte le curve teoriche corrispondenti a $n_s = \SI{1.49 \pm 0.01}{}$ e $n_p = \SI{1.50 \pm 0.02}{}$, valori ottenuti fittando le curve sui dati sperimentali.
+\begin{Figure}
+	\begin{center}
+	\includegraphics[width=\linewidth]{riflettanze.pdf}
+	\captionof{figure}{Riflettanza delle componenti TE e TM al variare dell'angolo di incidenza, si riportano le curve teoriche fittate.}
+	\label{fig:brewster_I}
+	\end{center}
+\end{Figure}
+
+\subsection{Visibilità}
+Per stimare l'angolo di Brewster del dielettrico, ossia l'angolo per cui l'intensità della componente TM del fascio riflesso si annulla, si studia la visibilità del fascio definita come
+\begin{equation}\label{eq:visibilità}
+	V(\theta) = \frac{r_s(\theta) - r_p(\theta)}{r_s(\theta) + r_p(\theta)}
+\end{equation}
+dalla cui definizione è evidente che
+\begin{equation}
+	\left. V(\theta) \right\vert_{\theta = \theta_\mathrm{Brewster}} = 1.
+\end{equation}
+In Figura \ref{fig:brewster_V} sono riportati i dati sperimentali insieme alla curva teorica corrispondente a $n_V = \SI{1.61 \pm 0.04}{}$, ottenuto fittando i dati.
+\begin{Figure}
+	\begin{center}
+	\includegraphics[width=\linewidth]{visibilità.pdf}
+	\captionof{figure}{Visibilità del raggio riflesso, si riporta la curva teorica fittata.}
+	\label{fig:brewster_V}
+	\end{center}
+\end{Figure}
+Si nota che i diversi valori di $n$ ottenuti in quest'ultima parte dell'esperienza sono incompatibili tra loro, ciò è sintomo di una sottostima delle incertezze sui valori di intensità.
+Per stimare l'angolo $\theta_\mathrm{max}$ corrispondente al massimo della visibilità, si fa una media trai due angoli corrispondenti ai valori misurati della visibilità più alti, si ottiene
+\begin{equation}
+	\theta_\mathrm{max} = \theta_\mathrm{brewster} = \SI{57 \pm 2}{°}
+\end{equation}
+da cui, essendo 
+\begin{equation}
+	\theta_\mathrm{brewster} = \arctan (n)
+\end{equation}
+si trova 
+\begin{equation}
+	n = \tan (\theta_\mathrm{brewster} )= \SI{1.54 \pm 0.05}{},
+\end{equation}
+compatibile con i valori ottenuti precedentemente.
 
 \end{multicols}
 
