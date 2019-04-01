@@ -184,6 +184,35 @@ Si misura l'intensità di un laser HeNe\footnote{\url{https://www.dropbox.com/s/
 %\hline
 %\end{tabular}
 %\end{center}
+\section{Legge di Malus}
+\subsection{due polarizzatori}
+Consideriamo un fascio di luce non polarizzata o a polarizzazione ellittica che passi attraverso due polarizzatori lineari. Sia $\theta$ l'angolo formato dagli assi di polarizzazione dei filtri e $I_0$ l'intensità della luce all'ingresso del primo filtro. L'intensità della luce uscente al termine del processo segue la legge
+\begin{equation}\label{eq:Malus1}
+  I = I_0cos^2\theta
+\end{equation}
+
+Verifichiamo la legge di Malus utilizzando l'apparato sperimentale in figura \ref{fig:mancante}. Effettuiamo preliminarmente una misura dell'intensità della radiazione di fondo,otturando completamente il laser. Troviamo il valore
+$$I_b = \SI{7.6 \pm 0.4}{mV}$$
+Ruotiamo l'asse del secondo polarizzatore finchè non otteniamo assenza di luce trasmessa. Questo significa che gli assi di polarizzazione sono tra di loro ortogonali. Questa configurazione ci fornisce l'offset per misurare $\theta$: se $\theta_1$ è l'angolo misurato sul polarizzatore in uscita in configurazione generica e $\theta_0$ è l'angolo misurato sul polarizzatore in ingresso quando gli assi sono ortogonali allora
+$$\theta = \theta_1 - \theta_0 - \frac{\pi}{2} $$
+Facciamo variare l'inclinazione dell'asse di polarizzazione in uscita e prendiamo le misure di potenziale dal multimetro. Sappiamo infatti che il potenziale genrato dal fotodiodo è, nella regione di linearità, direttamente proporzionale all'intensità della radiazione incidente su di esso. Sottraiamo al risultato trovato l'intensità della radiazione di fondo. I risultati sono riportati in tabella \ref{tab:malus1}. Effettuiamo un fit dei dati col metodo del $\chi^2$ a 27 gradi di libertà utilizzando la funzione a tre parametri
+$$Acos^2(B\theta + C)$$
+Ricaviamo i seguenti valori:
+$$A = \SI{6.11 \pm 0.06}{V}$$
+$$B = \SI{1.004 \pm 0.006}{rad^{-1}}$$
+$$C = \SI{3.15 \pm 0.02}{rad}$$
+Il valore di rms è 1.01. La fase C è irrivelante considerando la simmetria della funzione in esame e può essere posta uguale a 0 entro l'incertezza con la quale si effettua la lettura dell'angolo.
+Riportiamo in figura \ref{fig:malus1} il grafico dell'intensità in funzione di $\theta$ e vi sovrapponiamo la curva di fit. Notiamo che i dati sperimentiali sidiscostano maggiormente dalla curva teorica in corrispondenza del punto di massimo per l'intensità della luce uscente, intorno al quale abbiamo ritenuto opportuno prendere un maggior numero di misure.
+Le principali cause di errore sono da attribuire a fluttuazioni dell'intensita di fondo dovuta a disturbi esterni (accensione e spegnimento di luci, spostamento di persone) e a imperfezioni o aloni nei polarizzatori.
+
+
+\begin{Figure}
+	\begin{center}
+	\includegraphics[width=\linewidth]{malus1.pdf}
+	\captionof{figure}{\small{Voltaggio ai capi del fotodiodo in funzione dell'angolo di rotazione $\theta$ tra i due assi di polarizzazione dei filtri.Ai dati è sovrapposta la curva teorica con i parametri di fit.}}
+	\label{fig:malus}
+	\end{center}
+\end{Figure}
 
 \section{Angolo di Brewster}
 Si monta l'apparato in Figura \ref{opt:brewster}, dove prima del fotodiodo è stato posizionato un \emph{beamsplitter polarizzatore}, in grado di trasmettere la componente orizzontale o quella verticale\footnote{Quale delle due componenti viene trasmessa e quale riflessa dipende da come è costruito e come è montato il beamsplitter.} della radiazione e riflettere la componente ortogonale, con coefficiente di assorbimento complessivo quasi nullo. 
