@@ -158,7 +158,7 @@ Si verifica la legge di Malus utilizzando l'apparato sperimentale in figura \ref
 	\label{fig:malusDiagram}
 	\end{center}
 \end{Figure}
-Si ruota l'asse del secondo polarizzatore finché non si ottenga assenza di luce trasmessa. Questo significa che gli assi di polarizzazione sono tra di loro ortogonali. Questa configurazione fornisce l'offset per misurare $\theta$: se $\theta_1$ è l'angolo misurato sul polarizzatore in uscita in configurazione generica e $\theta_0$ è l'angolo misurato sul polarizzatore in ingresso quando gli assi sono ortogonali allora
+Si ruota l'asse del secondo polarizzatore fino ad ottenere assenza di luce trasmessa. Questo significa che gli assi di polarizzazione sono tra di loro ortogonali. Questa configurazione fornisce l'offset per misurare $\theta$: se $\theta_1$ è l'angolo misurato sul polarizzatore in uscita in configurazione generica e $\theta_0$ è l'angolo misurato sul polarizzatore in ingresso quando gli assi sono ortogonali allora
 \[
 \theta = \theta_1 - \theta_0 - \frac{\pi}{2}.
 \]
@@ -264,7 +264,7 @@ I_\text{TE}^i &= \SI{9.23 \pm 0.09}{V};
 
 
 \subsection{Riflettanza}
-Gli andamenti previsti per le riflettanze, ovvero i rapporti tra l'intensità misurata e quella misurata in assenza di dielettrico, sono descritti dalle due curve
+Gli andamenti previsti per le riflettanze, ovvero i rapporti tra l'intensità misurata e quella misurata in assenza di dielettrico, in funzione dell'angolo $\theta$ di incidenza, sono descritti dalle due curve
 \begin{equation}\label{eq:rs}
 	R_{\mathrm{TE}} = R_\mathrm{s} = \left\vert \frac{\cos \theta - \sqrt{n^2 - \sin^2 \theta}}{\cos \theta + \sqrt{n^2 - \sin^2 \theta}} \right\vert^2,
 \end{equation}
@@ -281,10 +281,12 @@ Il risultato della misura è riportato in Figura \ref{fig:brewster_I}, dove ai d
 	\end{center}
 \end{Figure}
 
+In questo caso, si ritiene che la non aderenza di alcuni punti alla curva teorica sia dovuta a imperfezioni presenti sulla superficie della lastra di dielettrico e al non perfetto allineamento del fotodiodo con il raggio riflesso. Le barre di incertezza che corredano i punti sperimentali risultano essere di dimensioni troppo ridotte per essere distinte: si ritiene che vi possa essere una sottostima delle incertezze dovuta sistematiche sperimentali che non si è in grado di stimare, quali la fluttuazione delle condizioni di luce ambientale o l'oscillazione del valore di tensione letto sul multimetro.
+
 \subsection{Visibilità}
-Per stimare l'angolo di Brewster del dielettrico, ossia l'angolo per cui l'intensità della componente TM del fascio riflesso si annulla, si studia la visibilità del fascio definita come
+Per stimare l'angolo di Brewster del dielettrico, ossia l'angolo di incidenza per cui l'intensità della componente TM del fascio riflesso si annulla, si studia la visibilità del fascio definita come
 \begin{equation}\label{eq:visibilità}
-	V(\theta) = \frac{R_s(\theta) - R_p(\theta)}{R_s(\theta) + R_p(\theta)}
+	V(\theta) = \frac{R_s(\theta) - R_p(\theta)}{R_s(\theta) + R_p(\theta)},
 \end{equation}
 dalla cui definizione è evidente che
 \begin{equation}
@@ -312,13 +314,19 @@ si trova
 \end{equation}
 compatibile con i valori ottenuti precedentemente.
 
+\section{Conclusioni}
+Nella prima parte dell'esperienza si è mostrata la validità della legge di Malus, ottenendo un andamento sperimentale che si discosta da quello teorico solamente in corrispondenza del massimo; al contrario, la verifica mediante tre polarizzatori è compatibile con la previsione teorica solamente per quanto concerne il periodo della variazione dell'intensità, mentre riguardo all'ampiezza della stessa, essa è influenzata da fattori non controllabili quali le condizioni di luce ambientale variabili e la presenza di imperfezioni sul polaroid.
+
+Nella seconda parte si è invece ricavato l'indice di rifrazione di una lastra di dielettrico a partire dalla misura del suo angolo di Brewster: i valori ottenuti ($n_{(1)} = \SI{1.49 \pm 0.01}{}$, $n_{(2)} = \SI{1.50 \pm 0.02}{}$ e $n_{(3)} = \SI{1.54 \pm 0.06}{}$) risultano essere tutti compatibili tra loro e con il valore previsto per una lastra di materiale analogo, $n = \SI{1.49}{}$\footnote{\url{https://www.filmetrics.com/refractive-index-database/Acrylic/Acrylate-Lucite-Perspex-Plexiglass}}.
+
+
 \end{multicols}
 
 \section{Appendice}
 
 \begin{table}[H]
 \centering
-\captionof{table}{Misure per la verifica della legge di Malus.}
+\captionof{table}{Misure per la verifica della legge di Malus con due polarizzatori.}
 \label{tab:malus1}
 \begin{tabular}{cc}
 \hline
@@ -361,47 +369,9 @@ compatibile con i valori ottenuti precedentemente.
 
 
 
-
-
-
-
-
 \begin{table}[H]
 \centering
-\captionof{table}{Misure di polarizzazione.}
-\label{tab:polarizzazione}
-\begin{tabular}{cc}
-\hline
- $\theta$ [deg]& I [V]\\
- $\pm 1$ & \\
-\hline
-  $ 250  $ & $ 6.02 \pm  0.07 $ \\
-  $ 270  $ & $ 6.64 \pm  0.07 $ \\
-  $ 290  $ & $ 7.92 \pm  0.08 $ \\
-  $ 310  $ & $ 8.82 \pm  0.08 $ \\
-  $ 330  $ & $ 9.13 \pm  0.09 $ \\
-  $ 350  $ & $ 8.95 \pm  0.08 $ \\
-  $ 370  $ & $ 7.90\pm  0.08 $ \\
-  $ 390  $ & $ 7.45 \pm  0.08 $ \\
-  $ 420  $ & $ 7.88 \pm  0.08 $ \\
-  $ 440  $ & $ 7.96 \pm  0.08 $ \\
-  $ 460  $ & $ 8.32 \pm  0.08 $ \\
-  $ 480  $ & $ 9.12\pm  0.09 $ \\
-  $ 500  $ & $ 9.40 \pm  0.09 $ \\
-  $ 530  $ & $ 8.90 \pm  0.08 $ \\
-  $ 550$ & $ 7.80 \pm  0.08 $  \\
- $570 $ & $7.00 \pm0.08 $\\
- $590$ & $6.40 \pm0.07 $\\
-\hline
-\end{tabular}
-\end{table}
-
-
-
-
-\begin{table}[H]
-\centering
-\captionof{table}{Misure di polarizzazione.}
+\captionof{table}{Misure per la verifica della legge di Malus con tre polarizzatori.}
 \label{tab:malus2}
 \begin{tabular}{cc}
 \hline
@@ -459,12 +429,50 @@ compatibile con i valori ottenuti precedentemente.
 
 
 
+\begin{table}[H]
+\centering
+\captionof{table}{Misure di intensità utilizzando un solo polarizzatore.}
+\label{tab:polarizzazione}
+\begin{tabular}{cc}
+\hline
+ $\theta$ [deg]& I [V]\\
+ $\pm 1$ & \\
+\hline
+  $ 250  $ & $ 6.02 \pm  0.07 $ \\
+  $ 270  $ & $ 6.64 \pm  0.07 $ \\
+  $ 290  $ & $ 7.92 \pm  0.08 $ \\
+  $ 310  $ & $ 8.82 \pm  0.08 $ \\
+  $ 330  $ & $ 9.13 \pm  0.09 $ \\
+  $ 350  $ & $ 8.95 \pm  0.08 $ \\
+  $ 370  $ & $ 7.90\pm  0.08 $ \\
+  $ 390  $ & $ 7.45 \pm  0.08 $ \\
+  $ 420  $ & $ 7.88 \pm  0.08 $ \\
+  $ 440  $ & $ 7.96 \pm  0.08 $ \\
+  $ 460  $ & $ 8.32 \pm  0.08 $ \\
+  $ 480  $ & $ 9.12\pm  0.09 $ \\
+  $ 500  $ & $ 9.40 \pm  0.09 $ \\
+  $ 530  $ & $ 8.90 \pm  0.08 $ \\
+  $ 550$ & $ 7.80 \pm  0.08 $  \\
+ $570 $ & $7.00 \pm0.08 $\\
+ $590$ & $6.40 \pm0.07 $\\
+\hline
+\end{tabular}
+\end{table}
+
+
+
+
+
+
+
+
+
 
 
 
 \begin{table}[H]
 \centering
-\captionof{table}{Misure per lo studio dell'angolo di Brewster.}
+\captionof{table}{Misure per lo studio dell'angolo di Brewster: l'angolo in questo caso è quello di incidenza sulla lastra.}
 \label{tab:brewster}
 \begin{tabular}{ccc}
 \hline
