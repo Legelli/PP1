@@ -128,13 +128,13 @@ Si utilizza un laser He-Ne di lunghezza d'onda $\lambda = \SI{632.8}{nm}$, monta
 
 In serie al laser è posta una lamina di ritardo $\lambda / 4$ montata su uno stadio di rotazione goniometrica, che ha lo scopo di produrre luce polarizzata circolarmente (o ellitticamente, come si vedrà nella sezione~\ref{sec:polarizzazione}). Inoltre è presente anche un attenuatore di fascio, per ridurre l'intensità della luce emessa, e un'iride.
 
-Al fine di misurare l'intensità del fascio luminoso si utilizza un fotodiodo, che produce un segnale di tensione direttamente proporzionale (ammesso che si lavori nella condizione di linearità, ovvero non superando un voltaggio di circa \SI{10}{V}) all'intensità stessa. Il segnale di fondo del fotodiodo risulta essere 
+Al fine di misurare l'intensità del fascio luminoso si utilizza un fotodiodo, che produce un segnale di tensione direttamente proporzionale (ammesso che si lavori nella condizione di linearità, ovvero non superando un voltaggio di circa \SI{10}{V}) all'intensità stessa. La differenza di potenziale ai capi del fotodiodo è misurata con il multimetro \texttt{METEX M-4650}, e le incertezze che saranno associate alla misura sono quelle indicate dal manuale di utilizzo. Il segnale di fondo del fotodiodo risulta essere 
 \[
 I_b = \SI{7.6 \pm 0.4}{mV},
 \]
 ottenuto mediante una misura con il laser oscurato. Ai valori ottenuti sperimentalmente sarà dunque necessario sottrarre il segnale di fondo. Nel seguito, le misure di intensità verranno espresse direttamente come differenza di potenziale, lasciando sottinteso che esista una costante di proporzionalità non nota tra le due\footnote{In particolare, sarà quindi sensato rapportare sempre l'intensità in uscita con quella del fascio incidente.}.
 
-I filtri polarizzatori lineari adoperati sono dotati di una ghiera goniometrica di sensibilità \SI{2}{\degree} che permette di misurare l'angolo di rotazione.
+I filtri polarizzatori lineari adoperati sono dotati di una ghiera goniometrica di sensibilità \SI{2}{\degree} che permette di misurare l'angolo di rotazione. L'incertezza associata, posto di poter interpolare a mezza tacca, sarà dunque di \SI{1}{\degree}.
 
 
 %==================================================
@@ -160,7 +160,7 @@ Si verifica la legge di Malus utilizzando l'apparato sperimentale in figura \ref
 \end{Figure}
 Si ruota l'asse del secondo polarizzatore finché non si ottenga assenza di luce trasmessa. Questo significa che gli assi di polarizzazione sono tra di loro ortogonali. Questa configurazione fornisce l'offset per misurare $\theta$: se $\theta_1$ è l'angolo misurato sul polarizzatore in uscita in configurazione generica e $\theta_0$ è l'angolo misurato sul polarizzatore in ingresso quando gli assi sono ortogonali allora
 \[
-\theta = \theta_1 - \theta_0 - \frac{\pi}{2}
+\theta = \theta_1 - \theta_0 - \frac{\pi}{2}.
 \]
 Si varia l'inclinazione dell'asse di polarizzazione in uscita e si prendono le misure di potenziale dal multimetro. I risultati sono riportati in Tabella \ref{tab:malus1} in Appendice. Si effettua un fit dei dati col metodo del $\chi^2$ a 27 gradi di libertà (dati dal numero di punti sperimentali meno il numero di parametri) utilizzando la funzione a tre parametri
 \[
@@ -174,7 +174,7 @@ B &= \SI{1.004 \pm 0.006}{rad^{-1}} \\
 C &= \SI{3.15 \pm 0.02}{rad}
 \end{aligned}
 \]
-Il chi quadro rapportato al numero di gradi di libertà risulta essere $1.01$. La fase $C$ è irrilevante considerando la simmetria della funzione in esame e può essere posta uguale a $0$ entro l'incertezza con la quale si effettua la lettura dell'angolo. Si osserva che il valore di $B$ è compatibile con quello previsto teoricamente dalla~(\ref{eq:Malus1}) ($B^{\text{(teo)}} = \SI{1}{rad^{-1}}$).
+Il chi quadro rapportato al numero di gradi di libertà risulta essere $1.01$, valore che suggerisce la bontà del fit. La fase $C$ è irrilevante considerando la simmetria della funzione in esame e può essere posta uguale a $0$ entro l'incertezza con la quale si effettua la lettura dell'angolo. Si osserva che il valore di $B$ è compatibile con quello previsto teoricamente dalla~(\ref{eq:Malus1}) ($B^{\text{(teo)}} = \SI{1}{rad^{-1}}$).
 Si riporta in Figura~\ref{fig:malus1} il grafico dell'intensità in funzione di $\theta$, a cui è sovrapposta la curva di fit. Si nota che i dati sperimentali si discostano maggiormente dalla curva teorica in corrispondenza del punto di massimo per l'intensità della luce uscente, intorno al quale si è ritenuto opportuno prendere un maggior numero di misure.
 Le principali cause di errore sono da attribuire a fluttuazioni dell'intensità di fondo dovuta a disturbi esterni (accensione e spegnimento di luci, spostamento di persone) e a imperfezioni o aloni nei polarizzatori.
 
@@ -318,43 +318,43 @@ compatibile con i valori ottenuti precedentemente.
 
 \begin{table}[H]
 \centering
-\captionof{table}{Misure per la verifica della legge di Malus.}
+\captionof{table}{Misure per la verifica della legge di Malus con due polarizzatori.}
 \label{tab:malus1}
 \begin{tabular}{cc}
 \hline
- $\theta$ [deg]& I [V]\\
- $\pm 0.4$ & \\
+ $\theta$ [\SI{}{\degree}]& I [\SI{}{V}]\\
+ $\pm 1$ & \\
 \hline
- $ 71.0 $& $  0.62  \pm 0.13 $\\
- $  81.0$  &$ 0.12\pm 0.12 $\\
- $ 91.0 $& $ 0.022 \pm 0.003  $\\
- $101.0$ &$  0.25 \pm 0.12 $\\
-  $111.0 $ & $ 0.86 \pm 0.13 $\\
- $121.0$ &$  1.63 \pm 0.14 $\\
- $131.0$ &$  2.54 \pm 0.16 $ \\
- $141.0$ &$  3.66 \pm 0.17 $\\
- $151.0$ &$  4.82 \pm 0.19 $\\
- $161.0$ &$  5.66 \pm 0.20  $\\
- $165.0$ &$  5.87 \pm 0.21 $\\
- $169.0$ &$  6.04 \pm 0.21 $\\
- $173.0$ &$  6.18 \pm 0.21 $\\
- $177.0$ &$  6.32 \pm 0.21 $\\
- $181.0$ &$  6.36 \pm 0.22 $\\
- $185.0$ &$  6.27 \pm 0.21 $\\
- $189.0$ &$  6.16 \pm 0.21 $\\
- $193.0$ &$  5.95 \pm 0.21 $\\
- $197.0$ &$  5.54 \pm 0.20 $\\
- $201.0$ &$  5.02 \pm 0.20 $\\
- $207.0$ &$  4.53 \pm 0.19 $\\
- $ 211.0$ &$ 4.13 \pm 0.18$ \\
- $221.0$ &$  3.03 \pm 0.17 $\\
- $231.0$ &$  2.04 \pm 0.15 $\\
- $241.0$ &$  1.13 \pm 0.14 $\\
- $251.0$ &$  0.51 \pm 0.13 $\\
- $261.0$ &$  0.11 \pm 0.12 $ \\
- $271.0$ &$  0.011 \pm 0.002 $\\
- $281.0$ &$  0.19 \pm 0.12 $\\
- $291.0$ &$  0.61 \pm 0.13 $\\
+ $ 71 $& $  0.62  \pm 0.13 $\\
+ $  81$  &$ 0.12\pm 0.12 $\\
+ $ 91 $& $ 0.022 \pm 0.003  $\\
+ $101$ &$  0.25 \pm 0.12 $\\
+  $111 $ & $ 0.86 \pm 0.13 $\\
+ $121$ &$  1.63 \pm 0.14 $\\
+ $131$ &$  2.54 \pm 0.16 $ \\
+ $141$ &$  3.66 \pm 0.17 $\\
+ $151$ &$  4.82 \pm 0.19 $\\
+ $161$ &$  5.66 \pm 0.20  $\\
+ $165$ &$  5.87 \pm 0.21 $\\
+ $169$ &$  6.04 \pm 0.21 $\\
+ $173$ &$  6.18 \pm 0.21 $\\
+ $177$ &$  6.32 \pm 0.21 $\\
+ $181$ &$  6.36 \pm 0.22 $\\
+ $185$ &$  6.27 \pm 0.21 $\\
+ $189$ &$  6.16 \pm 0.21 $\\
+ $193$ &$  5.95 \pm 0.21 $\\
+ $197$ &$  5.54 \pm 0.20 $\\
+ $201$ &$  5.02 \pm 0.20 $\\
+ $207$ &$  4.53 \pm 0.19 $\\
+ $ 211$ &$ 4.13 \pm 0.18$ \\
+ $221$ &$  3.03 \pm 0.17 $\\
+ $231$ &$  2.04 \pm 0.15 $\\
+ $241$ &$  1.13 \pm 0.14 $\\
+ $251$ &$  0.51 \pm 0.13 $\\
+ $261$ &$  0.11 \pm 0.12 $ \\
+ $271$ &$  0.011 \pm 0.002 $\\
+ $281$ &$  0.19 \pm 0.12 $\\
+ $291$ &$  0.61 \pm 0.13 $\\
 \hline
 \end{tabular}
 \end{table}
